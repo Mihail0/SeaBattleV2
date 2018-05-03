@@ -31,7 +31,7 @@ TEST_F(MapTest, MapInitializationTest) {
 
 TEST_F(MapTest, MapFireAtX0Test) {
 	ui8 expected = bomb;
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		ui8 rnd = Random(100);
 		if (rnd > 9) {
 			EXPECT_THROW(map->fire(rnd, 0), std::out_of_range);
@@ -45,7 +45,7 @@ TEST_F(MapTest, MapFireAtX0Test) {
 
 TEST_F(MapTest, MapFireAtXYTest) {
 	ui8 expected = bomb;
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		ui8 rndX = Random(100);
 		ui8 rndY = Random(100);
 		if (rndX > 9 || rndY > 9) {
@@ -59,7 +59,7 @@ TEST_F(MapTest, MapFireAtXYTest) {
 }
 
 TEST_F(MapTest, MapFireAtMapTest) {
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		Map* expectMap = new Map();
 		Map* actualMap = new Map();
 		EXPECT_EQ(*expectMap, *actualMap);
@@ -74,7 +74,7 @@ TEST_F(MapTest, MapFireAtMapTest) {
 }
 
 TEST_F(MapTest, MapFireAtShipTest) {
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		Map* expectMap = new Map();
 		Map* actualMap = new Map();
 		Ship*** expectShips = new Ship**[MAXSHIPS];

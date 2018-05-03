@@ -27,7 +27,7 @@ TEST_F(LineTest, LineInitializationTest) {
 
 TEST_F(LineTest, LineFireAtXTest) {
 	ui8 expected = bomb;
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		ui8 rnd = Random(100);
 		if (rnd > 9) {
 			EXPECT_THROW(line->fire(rnd), std::out_of_range);

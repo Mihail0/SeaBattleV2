@@ -21,7 +21,7 @@ TEST_F(ShipCreatorTest, ShipCreatorCreationTest) {
 }
 
 TEST_F(ShipCreatorTest, ShipCreatorCreateTest) {
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		ui8 rndLength = Random(20);		//Random length of ship
 		ui8 rndX = Random(20);			//Random x-coordinate
 		ui8 rndY = Random(20);			//Random y-coordinate
@@ -77,7 +77,7 @@ TEST_F(ShipCreatorTest, ShipCreatorCreateTest) {
 }
 
 TEST_F(ShipCreatorTest, ShipCreatorCreate2Test) {
-	for (ui8 i = 0; i < 100; i++) {
+	for (ui8 i = 0; i < TESTS; i++) {
 		Map* map = new Map();
 		Ship*** ships = new Ship**[2];
 		for (ui8 j = 0; j < 2; j++) {
