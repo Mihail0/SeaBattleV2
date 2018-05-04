@@ -18,6 +18,7 @@ protected:
 	ui8* lengths;
 	Ship*** ships;
 	ShipCreator* shipCreator;
+	virtual void placement();
 public:
 	Game();
 	virtual ~Game();

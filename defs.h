@@ -9,6 +9,7 @@
 #define MAXSHIPS 32
 #define TESTSHOOTS 30
 #define TESTS 128
+#define SHIPSNUM 5
 #define Random(x) (rand() % static_cast<ui8>(x))
 
 enum States {
