@@ -11,6 +11,10 @@
 #define TESTS 128
 #define SHIPSNUM 5
 #define Random(x) (rand() % static_cast<ui8>(x))
+#define cwater	"* "
+#define cbomb	"O "
+#define cship	"* "
+#define ccrash	"X "
 
 enum States {
 	water,

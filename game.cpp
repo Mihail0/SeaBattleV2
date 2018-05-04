@@ -22,6 +22,36 @@ void Game::placement() {
 	}
 }
 
+void Game::print() {
+	std::cout << " " << "  ";
+	for (ui8 i = 0; i < MAPSIZE; i++) {
+		std::cout << (int)i << " ";
+	}
+	std::cout << std::endl;
+	for (ui8 i = 0; i < MAPSIZE; i++) {
+		std::cout << " " << (int)i << " ";
+		for (ui8 j = 0; j < MAPSIZE; j++) {
+			switch ((*map)[i][j]) {
+			case water:
+				std::cout << cwater;
+				break;
+			case ship:
+				std::cout << cship;
+				break;
+			case bomb:
+				std::cout << cbomb;
+				break;
+			case crash:
+				std::cout << ccrash;
+				break;
+			default:
+				break;
+			}
+		}
+		std::cout << std::endl;
+	}
+}
+
 Game::Game() {
 	map = new Map();
 	lengths = new ui8[MAXSHIPS];
