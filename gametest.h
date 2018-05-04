@@ -33,4 +33,10 @@ TEST_F(GameTest, GameShipsInitTest) {
 	}
 }
 
+TEST_F(GameTest, GameLengthsInitTest) {
+	for (ui8 i = 0; i < MAXSHIPS; i++) {
+		ASSERT_TRUE(!game->lengths[i]);
+	}
+}
+
 #endif
