@@ -27,7 +27,10 @@ TEST_F(GameTest, GameShipCreatorInitTest) {
 }
 
 TEST_F(GameTest, GameShipsInitTest) {
-	ASSERT_TRUE(game->ships != NULL);
+	ASSERT_TRUE(game->ships);
+	for (ui8 i = 0; i < MAXSHIPS; i++) {
+		ASSERT_TRUE(!game->ships[i]);
+	}
 }
 
 #endif
