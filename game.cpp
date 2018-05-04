@@ -1,7 +1,7 @@
 #include "game.h"
 
 void Game::placement() {
-	for (ui8 i = 0; i < SHIPSNUM; i++) {
+	for (ui8 i = 0; i < MAXSHIPS; i++) {
 		bool success = true;
 		do {
 			success = true;
@@ -87,19 +87,26 @@ void Game::run() {
 		message();
 		std::cout << std::endl;
 		print();
+		if (gamestate == win) {
+			//todo
+			break;
+		}
 		std::cout << std::endl << "Enter fire coordinates: ";
 		fflush(stdin);
 		ui8 x, y;
-		do {
-			scanf("%c", &y);
-			y -= '0';
-		} while (!(y >= 0 && y <= 9));
-		do {
-			scanf("%c", &x);
-			x -= '0';
-		} while (!(x >= 0 && x <= 9));
+		Read(y);
+		Read(x);
 		map->fire(x, y, ships, lengths);
-	} while (gamestate != win);
+		if ((*map)[x][y] == crash) gamestate = success;
+		else gamestate = miss;
+		bool end = true;
+		for (ui8 i = 0; i < MAXSHIPS; i++) {
+			if (lengths[i]) end = false;
+		}
+		if (end) {
+			gamestate = win;
+		}
+	} while (true);
 }
 
 Game::Game() {

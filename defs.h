@@ -7,11 +7,9 @@
 
 #define ui8 unsigned __int8
 #define MAPSIZE 10
-#define MAXSHIPS 32
+#define MAXSHIPS 5
 #define TESTSHOOTS 30
 #define TESTS 128
-#define SHIPSNUM 5
-#define Random(x) (rand() % static_cast<ui8>(x))
 #define cwater	"* "
 #define cbomb	"O "
 #define cship	"o "
@@ -38,5 +36,13 @@ enum GameStates {
 	success,
 	win
 };
+
+#define Read(x)		do {								\
+					scanf("%c", &x);					\
+					x -= '0';							\
+					} while (!(x >= 0 && x <= 9))
+
+#define Random(x)	(rand() %							\
+					static_cast<ui8>(x))
 
 #endif
