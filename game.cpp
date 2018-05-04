@@ -88,7 +88,8 @@ void Game::run() {
 		std::cout << std::endl;
 		print();
 		if (gamestate == win) {
-			//todo
+			std::cout << std::endl << "Attempts: " << (int)attempts << std::endl;
+			_getch();
 			break;
 		}
 		std::cout << std::endl << "Enter fire coordinates: ";
@@ -97,6 +98,7 @@ void Game::run() {
 		Read(y);
 		Read(x);
 		map->fire(x, y, ships, lengths);
+		attempts++;
 		if ((*map)[x][y] == crash) gamestate = success;
 		else gamestate = miss;
 		bool end = true;
@@ -111,6 +113,7 @@ void Game::run() {
 
 Game::Game() {
 	gamestate = preparation;
+	attempts = 0;
 	map = new Map();
 	lengths = new ui8[MAXSHIPS];
 	ships = new Ship**[MAXSHIPS];

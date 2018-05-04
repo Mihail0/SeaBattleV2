@@ -3,6 +3,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <time.h>
+#include <conio.h>
 #include <gtest/gtest.h>
 
 #define ui8 unsigned __int8
@@ -12,7 +13,7 @@
 #define TESTS 128
 #define cwater	"* "
 #define cbomb	"O "
-#define cship	"o "
+#define cship	"* "
 #define ccrash	"X "
 
 enum States {

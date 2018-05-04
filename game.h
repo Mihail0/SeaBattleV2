@@ -16,6 +16,7 @@ private:
 protected:
 	Map* map;
 	ui8* lengths;
+	ui8 attempts;
 	ui8 gamestate;
 	Ship*** ships;
 	ShipCreator* shipCreator;
