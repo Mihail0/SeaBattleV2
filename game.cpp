@@ -7,9 +7,12 @@ void Game::placement() {
 			success = true;
 			try {
 				ui8 l = 5 - i;
-				ui8 x = Random(10 - l + 1);
-				ui8 y = Random(10 - l + 1);
 				ui8 d = Random(2);
+				ui8 x = Random(10);
+				ui8 y = Random(10);
+				d == horizontal ?
+					x = Random(10 - l + 1) :
+					y = Random(10 - l + 1) ;
 				shipCreator->create(map, d, x, y, l);
 			}
 			catch (std::bad_alloc& ba) {
