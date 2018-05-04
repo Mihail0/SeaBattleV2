@@ -11,6 +11,7 @@ class Game {
 	FRIEND_TEST(GameTest, GameMapInitTest);
 	FRIEND_TEST(GameTest, GameShipCreatorInitTest);
 	FRIEND_TEST(GameTest, GameShipsInitTest);
+	FRIEND_TEST(GameTest, GameLengthsInitTest);
 private:
 protected:
 	Map* map;
