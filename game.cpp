@@ -13,7 +13,7 @@ void Game::placement() {
 				d == horizontal ?
 					x = Random(10 - l + 1) :
 					y = Random(10 - l + 1) ;
-				shipCreator->create(map, d, x, y, l);
+				ships[i] = shipCreator->create(map, d, x, y, l);
 			}
 			catch (std::bad_alloc& ba) {
 				success = false;
