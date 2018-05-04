@@ -19,8 +19,8 @@ protected:
 	Ship*** ships;
 	ShipCreator* shipCreator;
 	virtual void placement();
-public:
 	virtual void print();
+public:
 	Game();
 	virtual ~Game();
 };
