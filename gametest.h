@@ -20,6 +20,11 @@ TEST_F(GameTest, GameCreationTest) {
 
 TEST_F(GameTest, GameMapInitTest) {
 	ASSERT_TRUE(game->map != NULL);
+	for (ui8 i = 0; i < MAPSIZE; i++) {
+		for (ui8 j = 0; j < MAPSIZE; j++) {
+			EXPECT_EQ(0, (*game->map)[i][j]);
+		}
+	}
 }
 
 TEST_F(GameTest, GameShipCreatorInitTest) {
