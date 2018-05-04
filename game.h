@@ -24,6 +24,7 @@ protected:
 	virtual void message();
 	virtual void print();
 public:
+	virtual void run();
 	Game();
 	virtual ~Game();
 };

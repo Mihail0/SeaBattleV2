@@ -1,5 +1,6 @@
 #ifndef __DEFS
 #define __DEFS
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <time.h>
 #include <gtest/gtest.h>

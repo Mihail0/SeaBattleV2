@@ -80,6 +80,27 @@ void Game::print() {
 	}
 }
 
+void Game::run() {
+	do {
+		system("cls");
+		message();
+		std::cout << std::endl;
+		print();
+		std::cout << std::endl << "Enter fire coordinates: ";
+		fflush(stdin);
+		ui8 x, y;
+		do {
+			scanf("%c", &x);
+			x -= '0';
+		} while (!(x >= 0 && x <= 9));
+		do {
+			scanf("%c", &y);
+			y -= '0';
+		} while (!(y >= 0 && y <= 9));
+		map->fire(x, y, ships, lengths);
+	} while (gamestate != win);
+}
+
 Game::Game() {
 	gamestate = preparation;
 	map = new Map();
