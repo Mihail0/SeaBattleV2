@@ -16,9 +16,12 @@ private:
 protected:
 	Map* map;
 	ui8* lengths;
+	ui8 gamestate;
 	Ship*** ships;
 	ShipCreator* shipCreator;
+
 	virtual void placement();
+	virtual void message();
 	virtual void print();
 public:
 	Game();

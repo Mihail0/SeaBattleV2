@@ -22,6 +22,34 @@ void Game::placement() {
 	}
 }
 
+void Game::message() {
+	switch (gamestate) {
+	case preparation:
+		std::cout << "Preparations for the game..." << std::endl;
+		break;
+	case start:
+		std::cout << "The game is on!" << std::endl;
+		break;
+	case outshot:
+		std::cout << "Error: coordinates is outside of the map." << std::endl;
+		break;
+	case agnshot:
+		std::cout << "Error: already shot at this point." << std::endl;
+		break;
+	case miss:
+		std::cout << "You have missed the ship." << std::endl;
+		break;
+	case success:
+		std::cout << "You have hit the ship!" << std::endl;
+		break;
+	case win:
+		std::cout << "Congratulations! You Won!" << std::endl;
+		break;
+	default:
+		break;
+	}
+}
+
 void Game::print() {
 	std::cout << " " << "  ";
 	for (ui8 i = 0; i < MAPSIZE; i++) {
@@ -53,6 +81,7 @@ void Game::print() {
 }
 
 Game::Game() {
+	gamestate = preparation;
 	map = new Map();
 	lengths = new ui8[MAXSHIPS];
 	ships = new Ship**[MAXSHIPS];
@@ -62,6 +91,7 @@ Game::Game() {
 		ships[i] = NULL;
 	}
 	placement();
+	gamestate = start;
 }
 
 Game::~Game() {

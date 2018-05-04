@@ -28,4 +28,14 @@ enum Directions {
 	vertical
 };
 
+enum GameStates {
+	preparation,
+	start,
+	outshot,
+	agnshot,
+	miss,
+	success,
+	win
+};
+
 #endif
