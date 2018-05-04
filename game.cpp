@@ -14,6 +14,7 @@ void Game::placement() {
 					x = Random(10 - l + 1) :
 					y = Random(10 - l + 1) ;
 				ships[i] = shipCreator->create(map, d, x, y, l);
+				lengths[i] = l;
 			}
 			catch (std::bad_alloc& ba) {
 				success = false;
@@ -90,13 +91,13 @@ void Game::run() {
 		fflush(stdin);
 		ui8 x, y;
 		do {
-			scanf("%c", &x);
-			x -= '0';
-		} while (!(x >= 0 && x <= 9));
-		do {
 			scanf("%c", &y);
 			y -= '0';
 		} while (!(y >= 0 && y <= 9));
+		do {
+			scanf("%c", &x);
+			x -= '0';
+		} while (!(x >= 0 && x <= 9));
 		map->fire(x, y, ships, lengths);
 	} while (gamestate != win);
 }

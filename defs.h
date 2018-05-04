@@ -14,7 +14,7 @@
 #define Random(x) (rand() % static_cast<ui8>(x))
 #define cwater	"* "
 #define cbomb	"O "
-#define cship	"* "
+#define cship	"o "
 #define ccrash	"X "
 
 enum States {
