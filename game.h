@@ -14,7 +14,8 @@ class Game {
 private:
 protected:
 	Map* map;
-	Ship** ships;
+	ui8* lengths;
+	Ship*** ships;
 	ShipCreator* shipCreator;
 public:
 	Game();
