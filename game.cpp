@@ -100,7 +100,7 @@ void Game::run() {
 		ui8 x, y;
 		Read(y);
 		Read(x);
-		map->fire(x, y, ships, lengths);
+		bool hit = map->fire(x, y, ships, lengths);
 		attempts++;
 		if ((*map)[x][y] == crash) gamestate = success;
 		else gamestate = miss;
@@ -108,9 +108,8 @@ void Game::run() {
 		for (ui8 i = 0; i < MAXSHIPS; i++) {
 			if (lengths[i]) end = false;
 		}
-		if (end) {
-			gamestate = win;
-		}
+		if (hit) gamestate = destroy;
+		if (end) gamestate = win;
 	} while (true);
 }
 

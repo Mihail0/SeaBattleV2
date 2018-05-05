@@ -88,7 +88,8 @@ void Map::fire(const ui8 &x, const ui8 &y) {
 * @note x & y should be within the MAPSIZE
 * @note This function additionally destroy the ship that was hit
 */
-void Map::fire(const ui8 &x, const ui8 &y, Ship*** &ships, ui8* &lengths) {
+bool Map::fire(const ui8 &x, const ui8 &y, Ship*** &ships, ui8* &lengths) {
+	bool hit = false;
 	fire(x, y);
 	for (ui8 i = 0; i < MAXSHIPS; i++) {
 		for (ui8 j = 0; j < lengths[i]; j++) {
@@ -105,10 +106,12 @@ void Map::fire(const ui8 &x, const ui8 &y, Ship*** &ships, ui8* &lengths) {
 					ships[i] = NULL;
 					lengths[i] = 0;
 					explode(x, y);
+					hit = true;
 				}
 			}
 		}
 	}
+	return hit;
 }
 
 bool Map::operator==(const Map &map) const {

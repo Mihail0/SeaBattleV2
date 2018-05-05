@@ -13,7 +13,7 @@ protected:
 	virtual void fireAround(const ui8 &, const ui8 &);
 public:
 	virtual void fire(const ui8 &, const ui8 &);
-	virtual void fire(const ui8 &, const ui8 &, Ship*** &, ui8* &);
+	virtual bool fire(const ui8 &, const ui8 &, Ship*** &, ui8* &);
 	bool operator==(const Map &) const;
 	bool operator!=(const Map &) const;
 	Line& operator[](const ui8 &);
