@@ -35,6 +35,7 @@ enum GameStates {
 	agnshot,
 	miss,
 	success,
+	destroy,
 	win
 };
 

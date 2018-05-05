@@ -43,6 +43,9 @@ void Game::message() {
 	case success:
 		std::cout << "You have hit the ship!" << std::endl;
 		break;
+	case destroy:
+		std::cout << "You have destroyed the ship!" << std::endl;
+		break;
 	case win:
 		std::cout << "Congratulations! You Won!" << std::endl;
 		break;
